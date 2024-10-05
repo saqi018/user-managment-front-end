@@ -51,6 +51,10 @@ function App() {
       .catch(err => console.error(err));
   };
 
+useEffect(() => {
+  fetchUser()
+}, [])
+
 
   return (
     <>
@@ -72,7 +76,7 @@ function App() {
             onChange={(e) => setUpdateUser({ ...updateUser, name: e.target.value })}
             placeholder="Update user name"
           />
-          <button onClick={() => updateUserById(updateUser.id)}>Update User</button>
+          <button onClick={() => deleteUserById(updateUser.id)}>Update User</button>
         </div>
       )}
 
